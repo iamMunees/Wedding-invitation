@@ -58,7 +58,7 @@ export function InvitationHero({ invitation }) {
               srcSet={heroImage.srcSet}
               sizes="(max-width: 380px) 288px, (max-width: 640px) 352px, (max-width: 1024px) 448px, 512px"
               alt="Wedding portrait"
-              className="h-[21rem] w-full rounded-[1.6rem] object-cover object-center max-[480px]:h-[18.5rem] max-[380px]:h-[15.5rem] max-[380px]:rounded-[1.2rem] sm:h-[32rem] sm:rounded-[2rem]"
+              className="aspect-[4/5] w-full rounded-[1.6rem] object-cover object-top max-[480px]:aspect-[5/6] max-[380px]:rounded-[1.2rem] sm:h-[32rem] sm:aspect-auto sm:rounded-[2rem] sm:object-center"
               fetchPriority="high"
               decoding="async"
             />

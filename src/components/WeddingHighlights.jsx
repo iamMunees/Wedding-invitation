@@ -52,7 +52,7 @@ export function WeddingHighlights({ invitation }) {
                       srcSet={responsiveImage.srcSet}
                       sizes="(max-width: 479px) 100vw, (max-width: 1023px) 50vw, 420px"
                       alt={image.alt}
-                      className="h-64 w-full rounded-[1.2rem] object-cover max-[480px]:h-56 max-[380px]:h-48 max-[380px]:rounded-[1rem] sm:h-80 sm:rounded-[1.5rem]"
+                      className="aspect-[4/5] w-full rounded-[1.2rem] object-cover object-top max-[380px]:rounded-[1rem] sm:h-80 sm:aspect-auto sm:rounded-[1.5rem] sm:object-center"
                       loading="lazy"
                       decoding="async"
                     />

@@ -30,7 +30,7 @@ export function PhotoGallery({ invitation }) {
                     srcSet={responsiveImage.srcSet}
                     sizes="(max-width: 479px) 100vw, (max-width: 1279px) 50vw, 33vw"
                     alt={`Wedding gallery ${index + 1}`}
-                    className="h-56 w-full rounded-[1.1rem] object-cover transition duration-500 hover:scale-[1.03] max-[480px]:h-52 max-[380px]:h-44 max-[380px]:rounded-[0.95rem] sm:h-72 sm:rounded-[1.35rem]"
+                    className="aspect-[4/5] w-full rounded-[1.1rem] object-cover object-top transition duration-500 hover:scale-[1.03] max-[380px]:rounded-[0.95rem] sm:h-72 sm:aspect-auto sm:rounded-[1.35rem] sm:object-center"
                     loading="lazy"
                     decoding="async"
                   />

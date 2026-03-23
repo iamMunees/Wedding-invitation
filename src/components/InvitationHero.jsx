@@ -1,0 +1,63 @@
+export function InvitationHero({ invitation }) {
+  const coupleNames = [invitation.groom, invitation.bride].filter(Boolean)
+
+  return (
+    <section className="relative isolate overflow-hidden px-3 py-4 sm:px-6 sm:py-8 lg:px-10">
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top,#74b4ff_0%,#2560b8_48%,#17356d_100%)]" />
+      <div className="absolute inset-0 -z-10 opacity-50 [background-image:radial-gradient(rgba(255,255,255,.22)_1px,transparent_1px)] [background-size:18px_18px]" />
+
+      <div className="mx-auto grid max-w-6xl items-start gap-4 sm:gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+        <div className="order-2 rounded-[1.5rem] border border-white/20 bg-white/10 p-4 shadow-[0_24px_80px_rgba(7,21,56,0.35)] backdrop-blur-md sm:order-1 sm:rounded-[2rem] sm:p-8">
+          <p className="text-[10px] tracking-[0.28em] text-[var(--gold-soft)] uppercase sm:text-xs sm:tracking-[0.35em]">
+            {invitation.overline}
+          </p>
+          <h1 className="mt-3 font-[var(--font-display)] text-3xl leading-tight text-white sm:mt-4 sm:text-5xl lg:text-6xl">
+            {invitation.titleTamil}
+          </h1>
+          <p className="mt-4 max-w-xl text-base leading-7 text-white/88 sm:mt-6 sm:text-xl sm:leading-8">
+            {invitation.note}
+          </p>
+
+          <div className="mt-5 grid gap-3 rounded-[1.35rem] bg-white/92 p-4 text-center text-[var(--ink-deep)] sm:mt-8 sm:gap-4 sm:rounded-[1.75rem] sm:p-5 sm:grid-cols-2">
+            {coupleNames.map((name, index) => (
+              <div key={name}>
+                <p className="text-[10px] tracking-[0.24em] text-[var(--accent)] uppercase sm:text-xs sm:tracking-[0.28em]">
+                  {index === 0 ? 'Groom' : 'Bride'}
+                </p>
+                <h2 className="mt-2 break-words font-[var(--font-display)] text-2xl leading-tight sm:text-3xl">
+                  {name}
+                </h2>
+              </div>
+            ))}
+            {!coupleNames.length && (
+              <p className="text-xs tracking-[0.28em] text-[var(--accent)] uppercase">Groom</p>
+            )}
+          </div>
+
+          <div className="mt-4 grid gap-2 text-sm text-white/90 sm:mt-6 sm:flex sm:flex-wrap sm:gap-3">
+            <span className="rounded-full border border-white/25 bg-white/10 px-3 py-2 text-center text-xs leading-5 sm:px-4 sm:text-sm">
+              {invitation.day}, {invitation.date}
+            </span>
+            <span className="rounded-full border border-white/25 bg-white/10 px-3 py-2 text-center text-xs leading-5 sm:px-4 sm:text-sm">
+              {invitation.time}
+            </span>
+            <span className="rounded-full border border-white/25 bg-white/10 px-3 py-2 text-center text-xs leading-5 sm:px-4 sm:text-sm">
+              {invitation.location}
+            </span>
+          </div>
+        </div>
+
+        <div className="relative order-1 mx-auto w-full max-w-[22rem] sm:order-2 sm:max-w-md">
+          <div className="absolute -inset-2 rounded-[2rem] bg-[linear-gradient(135deg,rgba(255,223,154,.34),rgba(255,255,255,.1),rgba(94,201,255,.24))] blur-xl sm:-inset-4 sm:rounded-[2.5rem]" />
+          <div className="relative overflow-hidden rounded-[2rem] border-3 border-white/60 bg-white/20 p-2 shadow-[0_24px_80px_rgba(7,21,56,0.4)] sm:rounded-[2.5rem] sm:border-4 sm:p-3">
+            <img
+              src={invitation.imageFrame}
+              alt="Wedding portrait"
+              className="h-[21rem] w-full rounded-[1.6rem] object-cover object-center sm:h-[32rem] sm:rounded-[2rem]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
